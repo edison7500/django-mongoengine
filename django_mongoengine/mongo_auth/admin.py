@@ -1,6 +1,9 @@
-from django.contrib.auth.models import User, Group
+from django_mongoengine import mongo_admin as admin
+from .models import MongoUser
 
-from django_mongoengine import mongo_admin
 
-#admin.site.unregister(Group)
-#admin.site.unregister(User)
+class UserAdmin(admin.DocumentAdmin):
+    pass
+
+
+admin.site.register(MongoUser, UserAdmin)

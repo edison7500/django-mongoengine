@@ -15,7 +15,10 @@ from functools import reduce
 class DocumentChangeList(ChangeList):
     def __init__(self, *args, **kwargs):
         super(DocumentChangeList, self).__init__(*args, **kwargs)
-        self.pk_attname = self.lookup_opts.pk_name
+        try:
+            self.pk_attname = self.lookup_opts.pk_name
+        except AttributeError:
+            pass
 
     def get_results(self, request):
         # query_set has been changed to queryset

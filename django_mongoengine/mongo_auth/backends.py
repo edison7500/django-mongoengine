@@ -14,4 +14,4 @@ class MongoEngineBackend(object):
     try:
         user_can_authenticate = django_backends.ModelBackend.__dict__["user_can_authenticate"]
     except KeyError:
-        pass # it's okay for django < 1.9
+        pass  # it's okay for django < 1.9
