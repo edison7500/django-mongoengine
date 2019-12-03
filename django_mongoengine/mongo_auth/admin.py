@@ -3,7 +3,7 @@ from .models import MongoUser
 
 
 class UserAdmin(admin.DocumentAdmin):
-    pass
+    list_display = ["username", "email", ]
 
 
 admin.site.register(MongoUser, UserAdmin)
